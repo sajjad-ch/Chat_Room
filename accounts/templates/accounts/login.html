@@ -1,0 +1,25 @@
+{% extends "accounts/RegisterBase.html" %}
+{% block title %} Login {% endblock %}
+
+
+{% block content %}
+    <div class="sign-up form" style="max-width: 600px">
+        <h1 class="mt-2">User Login</h1>
+        <hr class="mt-0 mb-4">
+        <form method="post" class="form-group">
+            {% csrf_token %}
+            {{ login_form.email.label }}
+            {{ login_form.email }}
+            <br>
+            <br>
+            {{ login_form.password.label }}
+            {{ login_form.password }}
+            <br>
+            <br>
+            <br>
+            <p>Don't have an account?<a href="/accounts/register"> Create one.</a></p>
+            <p>Forgot password?<a href="/accounts/forgot_password"> Change it.</a></p>
+            <button type="submit" class="btn btn-success">Login</button>
+        </form>
+    </div>
+{% endblock %}
